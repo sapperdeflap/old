@@ -1,0 +1,27 @@
+
+Build Instructions:
+
+svn co svn://svn.openwrt.org/openwrt/trunk/ openwrt
+cd openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+git clone https://github.com/sapperdeflap/ffuw.git
+mv ffuw/package/* package/
+mv ffuw/files .
+rm -rf ffuw
+make defconfig
+make menuconfig
+
+# Now select the right Target System and Target Profile:
+# For the DIR-300:
+#  Target System => Atheros AR231x
+#  Target Profile => Default
+# For the TL-WR841ND:
+#  Target System => Atheros AR7xxx
+#  Target Profile => TP-LINK TL-WR841ND
+# Many other routers have not been tested yet
+# but may work. Give it a try! :-)
+
+make
+
+#the firmware images are now in the bin folder
