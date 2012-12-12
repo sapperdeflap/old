@@ -1,3 +1,0 @@
-*/5 * * * * /sbin/freifunk_watchdog > /dev/null
-#reboot every 5 days at 04:05
-5 4 */5 * * reboot
