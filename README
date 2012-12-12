@@ -5,10 +5,10 @@ svn co svn://svn.openwrt.org/openwrt/trunk/ openwrt
 cd openwrt
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-git clone git@github.com:unitedwifi/freifunk-unitedwifi.git
-mv freifunk-unitedwifi/package/* package/
-mv freifunk-unitedwifi/files .
-rm -rf freifunk-unitedwifi
+git clone git@github.com:sapperdeflap/ffuw.git
+mv ffuw/package/* package/
+mv ffuw/files .
+rm -rf ffuw
 make defconfig
 make menuconfig
 
